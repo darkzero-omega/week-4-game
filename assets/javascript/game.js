@@ -9,44 +9,135 @@
 
 
 
+var goal = Math.floor(Math.random() * (121 - 19 + 1));
+        var userScore = 0;
+        var wins = 0;
+        var powerStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+        var timeStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+        var soulStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+        var spaceStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+        var realityStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+        var mindStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
 
-var random_result;
-var lost;
-var win;
+        console.log(goal); 
+        console.log(powerStone); 
+        console.log(timeStone); 
+        console.log(soulStone); 
+        console.log(spaceStone); 
+        console.log(realityStone); 
+        console.log(mindStone); 
+        
+        //--Main--//
+        $(document).ready(function () {
 
-random_result = Math.floor(Math.random() * 90) + 30; // -- hoisting --//
+            //var toGoal = $("#goalcounter");
 
-console.log(random_result);
+            function reset() {
+                goal = Math.floor(Math.random() * (121 - 19 + 1) + 19);
+                $("#goalcounter").text(goal);
+                userScore = 0;
+                $("#scorecounter").text(userScore);
+                powerStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+                timeStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+                soulStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+                spaceStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+                realityStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+                mindStone = Math.floor(Math.random() * (12 - 1 + 1) + 1);
+                console.log(goal);
+                console.log(powerStone); 
+                console.log(timeStone); 
+                console.log(soulStone); 
+                console.log(spaceStone); 
+                console.log(realityStone); 
+                console.log(mindStone); 
+            };
 
-$("#result").html("Random Result: " + random_result);
-
-/for(var i = 0; i < 4; i++){
-
-    var random = Math.floor(Math.random() * 15) + 1 ;
-    console.log(random);
-    
-    var infStones = $("<div>");
-        infStones.attr({
-            "class": "infStones",
-            "data-random": random
-    
-    });
-
-    $(".crystals").append(infStones);
-    
-}
-
-$(".increaseScore").each(function() {
-    var random = Math.floor(Math.random() * 15) + 1;
-    $(this).attr("data-random", random);
-})
-
-$(".increaseScore").on("click", function () {
-
-    console.log($(this).attr("data-random"));
-
-
-});
+            $("#goalcounter").text(goal);
 
 
+            $(".powerStone").on("click", function () {
+                userScore = userScore + powerStone;
+                $("#scorecounter").text(userScore);
+                if (userScore === goal) {
+                    alert("You win!");
+                    wins++
+                    $("#wincounter").text(wins);
+                    reset();
+                } else if (userScore > goal) {
+                    alert("You lose!");
+                    reset();
+                }
+            });
 
+
+            $(".timeStone").on("click", function () {
+                userScore = userScore + timeStone;
+                $("#scorecounter").text(userScore);
+                if (userScore === goal) {
+                    alert("You win!");
+                    wins++
+                    $("#wincounter").text(wins);
+                    reset();
+                } else if (userScore > goal) {
+                    alert("You lose!");
+                    reset();
+                }
+            });
+
+
+            $(".soulStone").on("click", function () {
+                userScore = userScore + soulStone;
+                $("#scorecounter").text(userScore);
+                if (userScore === goal) {
+                    alert("You win!");
+                    wins++
+                    $("#wincounter").text(wins);
+                    reset();
+                } else if (userScore > goal) {
+                    alert("You lose!");
+                    reset();
+                }
+            });
+
+
+            $(".spaceStone").on("click", function () {
+                userScore = userScore + spaceStone;
+                $("#scorecounter").text(userScore);
+                if (userScore === goal) {
+                    alert("You win!");
+                    wins++
+                    $("#wincounter").text(wins);
+                    reset();
+                } else if (userScore > goal) {
+                    alert("You lose!");
+                    reset();
+                }
+            });
+            $(".realityStone").on("click", function () {
+                userScore = userScore + realityStone;
+                $("#scorecounter").text(userScore);
+                if (userScore === goal) {
+                    alert("You win!");
+                    wins++
+                    $("#wincounter").text(wins);
+                    reset();
+                } else if (userScore > goal) {
+                    alert("You lose!");
+                    reset();
+                }
+            });
+            $(".mindStone").on("click", function () {
+                userScore = userScore + mindStone;
+                $("#scorecounter").text(userScore);
+                if (userScore === goal) {
+                    alert("You win!");
+                    wins++
+                    $("#wincounter").text(wins);
+                    reset();
+                } else if (userScore > goal) {
+                    alert("You lose!");
+                    reset();
+                }
+            });
+
+        });

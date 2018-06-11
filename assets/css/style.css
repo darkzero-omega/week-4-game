@@ -1,25 +1,31 @@
-
-body{ 
-     background-color: black;
-     background-image: url('https://wallpapercave.com/wp/wp1815880.jpg');
+body {
+    background-color: black;
+    background-image: url('https://wallpapercave.com/wp/wp1815880.jpg');
     color: white;
     font-size: 50px;
 }
 
-.crystals > img {  
-     border:1px solid green;
-     height:200px;
-     width: 200px;
-     padding: 4px;
+.crystals>img {
+    border: 1px solid green;
+    height: 200px;
+    width: 200px;
+    padding: 4px;
 }
 
-.crystals > img:hover {
-    border: 5px solid green;
+.crystals>img:hover {
+    border: 5px solid orange;
     padding: 0;
 }
 
+.crystals>img:click {
+    border: 20px solid gold;
+    height: 200px;
+    width: 200px;
+    padding: 4px;
+}
+
 .crystals {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
